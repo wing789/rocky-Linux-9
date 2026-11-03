@@ -1,11 +1,10 @@
 
 {
   "name": "Rocky Linux 9 Learning",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "image": "rockylinux:9",
   "remoteUser": "root",
   "forwardPorts": [5000],
+  "postCreateCommand": "dnf -y install git wget vim nano sudo python3 python3-pip procps-ng iproute iputils tar gzip unzip which findutils shadow-utils && dnf clean all",
   "customizations": {
     "vscode": {
       "extensions": [
